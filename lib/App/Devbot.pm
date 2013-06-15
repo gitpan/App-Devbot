@@ -1,4 +1,4 @@
-package App::Devbot 0.001;
+package App::Devbot 0.001001;
 use v5.14;
 use warnings;
 
@@ -138,17 +138,17 @@ sub on_topic{
 }
 
 sub on_nick{
-  my ($fulluser, $nick)=@_[ARG0, ARG1];
+  my ($fulluser, $nick, $channels)=@_[ARG0, ARG1, ARG2];
   my $oldnick=parse_user $fulluser;
 
-  log_event $_, "-!- $oldnick is now known as $nick" for $irc->nick_channels($oldnick);
+  log_event $_, "-!- $oldnick is now known as $nick" for @$channels;
 }
 
 sub on_quit{
-  my ($fulluser, $message)=@_[ARG0, ARG1];
+  my ($fulluser, $message, $channels)=@_[ARG0, ARG1, ARG2];
   my ($nick, $user, $host)=parse_user $fulluser;
 
-  log_event $_, "-!- $nick [$user\@$host] has quit [$message]" for $irc->nick_channels($nick);;
+  log_event $_, "-!- $nick [$user\@$host] has quit [$message]" for @$channels;
 }
 
 sub on_dcc_request{
