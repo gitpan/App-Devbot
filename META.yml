@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               App-Devbot
-version:            0.001001
+version:            0.001002
 abstract:           IRC bot which helps development
 author:
     - Marius Gavrilescu <marius@ieval.ro>

@@ -1,4 +1,4 @@
-package App::Devbot 0.001001;
+package App::Devbot 0.001002;
 use v5.14;
 use warnings;
 
@@ -62,7 +62,7 @@ sub log_event{
 }
 
 sub bot_start{
-  $irc->plugin_add (NickServID => POE::Compnent::IRC::Plugin::NickServID->new(Password => $password)) if defined $password;
+  $irc->plugin_add (NickServID => POE::Component::IRC::Plugin::NickServID->new(Password => $password)) if defined $password;
   $irc->plugin_add (AutoJoin => POE::Component::IRC::Plugin::AutoJoin->new(
 	Channels => \@channels,
 	RejoinOnKick => 1,

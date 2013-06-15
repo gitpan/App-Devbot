@@ -4,3 +4,5 @@ App::Devbot (0.001001) 15 Jun 2013
   * Log quits and nicks
   * Add tests for quits and nicks
   * Clean up tests
+App::Devbot (0.001002) 15 Jun 2013
+  * Fix typo: Compnent instead of Component
