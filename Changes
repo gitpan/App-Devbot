@@ -1,8 +1,18 @@
-App::Devbot (0.001) 13 Jun 2013
-  * Initial release
-App::Devbot (0.001001) 15 Jun 2013
-  * Log quits and nicks
-  * Add tests for quits and nicks
-  * Clean up tests
-App::Devbot (0.001002) 15 Jun 2013
-  * Fix typo: Compnent instead of Component
+Release history for Perl extension App::Devbot.
+
+0.001003 2014-03-17T01:55+02:00
+ - Update Changes to CPAN::Changes::Spec format
+ - Use a git repository
+ - Add SIGN => 1, MIN_PERL_VERSION, resources, dynamic_config => 0 to Makefile.PL
+ - Add an 'use strict;' (to keep Kwalitee happy) and a $VERSION
+
+0.001002 2013-06-15
+ - Fix typo: Compnent instead of Component
+
+0.001001 2013-06-15
+ - Log quits and nicks
+ - Add tests for quits and nicks
+ - Clean up tests
+
+0.001 2013-06-13
+ - Initial release

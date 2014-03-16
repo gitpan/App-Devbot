@@ -1,6 +1,9 @@
-package App::Devbot 0.001002;
+package App::Devbot;
+
 use v5.14;
+use strict;
 use warnings;
+our $VERSION = 0.001003;
 
 use POE;
 use POE::Component::IRC::State;
