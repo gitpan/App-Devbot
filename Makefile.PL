@@ -19,10 +19,14 @@ WriteMakefile(
 		   POE                                     0
 		   POE::Component::IRC::Plugin::AutoJoin   0
 		   POE::Component::IRC::Plugin::NickServID 0
-		   POE::Component::IRC::State              0/,
+		   POE::Component::IRC::State              0
+		   Regexp::Common                          0/,
 	},
 	META_MERGE       => {
 		dynamic_config => 0,
+		recommends     => {
+			qw/POE::Component::SSLify 0/,
+		},
 		resources      => {
 			repository => 'https://git.ieval.ro/?p=app-devbot.git'
 		}

@@ -3,7 +3,7 @@ package App::Devbot;
 use v5.14;
 use strict;
 use warnings;
-our $VERSION = 0.001003;
+our $VERSION = 0.001004;
 
 use POE;
 use POE::Component::IRC::State;
@@ -15,10 +15,9 @@ use IRC::Utils qw/parse_user/;
 
 use Getopt::Long;
 use POSIX qw/strftime/;
+use Regexp::Common qw /net/;
 
 ##################################################
-
-our $VERSION;
 
 my $nick='devbot';
 my $password;
@@ -73,7 +72,10 @@ sub bot_start{
 	Retry_when_banned => 60,
   ));
 
-	$irc->yield(register => "all");
+  $server = $1 if $server =~ /^($RE{net}{domain})$/;
+  $port   = $1 if $port =~ /^([0-9]+)$/;
+
+  $irc->yield(register => "all");
   $irc->yield(
 	connect => {
 	  Nick     => $nick,
